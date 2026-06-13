@@ -1,0 +1,27 @@
+[package]
+name = "doneyet-cli"
+version = "0.1.0"
+edition = "2021"
+description = "dyt — command-line client for the doneyet API"
+
+[[bin]]
+name = "dyt"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive", "env", "wrap_help"] }
+clap_complete = "4"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "signal"] }
+reqwest = { version = "0.12", features = ["json", "rustls-tls"], default-features = false }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+anyhow = "1"
+thiserror = "2"
+toml = "0.8"
+directories = "5"
+rpassword = "7"
+comfy-table = "7"
+url = "2"
+chrono = { version = "0.4", features = ["serde"] }
+base64 = "0.22"
+urlencoding = "2"
